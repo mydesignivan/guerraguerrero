@@ -1,19 +1,15 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-class Contents extends Controller {
+class Radios extends Controller {
 
     /* CONSTRUCTOR
      **************************************************************************/
     function __construct(){
         parent::Controller();
 
-        if( !$this->session->userdata('logged_in') || !is_numeric($this->session->userdata('users_id')) ) redirect($this->config->item('base_url'));
-        
-        $this->load->model("contents_model");
-
         $this->load->library('dataview', array(
-            'tlp_section'        =>  'paneladmin/contents_view.php',
-            'tlp_title'          =>  TITLE_INDEX,
-            'tlp_title_section'  => "P&aacute;ginas"
+            'tlp_title'            => TITLE_RADIOS,
+            'tlp_meta_description' => META_DESCRIPTION_RADIOS,
+            'tlp_meta_keywords'    => META_KEYWORDS_RADIOS
         ));
         $this->_data = $this->dataview->get_data();
     }
@@ -26,22 +22,17 @@ class Contents extends Controller {
      **************************************************************************/
     public function index(){
         $this->_data = $this->dataview->set_data(array(
-            'tlp_script'  => array('plugins_tiny_mce', 'class_contents'),
-            'listPages'   => $this->contents_model->get_list()
+            'tlp_section'        => 'frontpage/radios_view.php',
+            'tlp_title_section'  => '',
         ));
-        $this->load->view('template_paneladmin_view', $this->_data);
+        $this->load->view('template_frontpage_view', $this->_data);
     }
+
 
     /* AJAX FUNCTIONS
      **************************************************************************/
-    public function ajax_save(){
-        if( $_SERVER['REQUEST_METHOD']=="POST" ){
-            die($this->contents_model->save() ? "success" : "error");
-        }
-    }
 
     /* PRIVATE FUNCTIONS
      **************************************************************************/
-}
 
-?>
+}

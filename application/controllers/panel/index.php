@@ -8,9 +8,9 @@ class Index extends Controller {
 
         $this->load->library("simplelogin");
         $this->load->library('dataview', array(
-            'tlp_section'        =>  'paneladmin/login_view.php',
+            'tlp_section'        =>  'panel/login_view.php',
             'tlp_title'          =>  TITLE_INDEX,
-            'tlp_title_section'  => "Panel Admin - Iniciar Sesi&oacute;n"
+            'tlp_title_section'  => "Panel Admin"
         ));
         $this->_data = $this->dataview->get_data();
     }
@@ -22,10 +22,10 @@ class Index extends Controller {
     /* PUBLIC FUNCTIONS
      **************************************************************************/
     public function index(){
-        if( $this->session->userdata('logged_in') && $this->session->userdata('level')==1 ) {
-            redirect('/paneladmin/myaccount/');
+        if( $this->session->userdata('logged_in') ) {
+            redirect('/panel/contents/');
         }else{
-            $this->load->view('template_paneladmin_view', $this->_data);
+            $this->load->view('template_frontpage_view', $this->_data);
         }
     }
 
@@ -34,14 +34,10 @@ class Index extends Controller {
             $statusLogin = $this->simplelogin->login($_POST["txtUser"], $_POST["txtPass"]);
             
             if( $statusLogin['status']=="error" ){
-                if( $statusLogin['error']=="loginfaild" ){
-                    $message = "El usuario y/o password son incorrectos.";
-                }
-                $this->session->set_flashdata('message_login', $message);
+                $this->session->set_flashdata('loginfaild', true);
                 redirect('/panel/');
-
             }else{
-                redirect('/paneladmin/myaccount/');
+                redirect('/panel/musica/');
             }
         }
     }

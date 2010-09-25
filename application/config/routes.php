@@ -43,11 +43,6 @@
 $route['default_controller'] = "index";
 $route['scaffolding_trigger'] = "";
 
-$route['panel'] = "paneladmin/index";
-$route['panel/login'] = "paneladmin/index/login";
-$route['panel/logout'] = "paneladmin/index/logout";
-$route['panel/bodas'] = "paneladmin/bodas";
-
 $route['quienes-somos'] = "quienesomos";
 
 /* End of file routes.php */

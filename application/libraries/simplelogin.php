@@ -50,14 +50,10 @@ class Simplelogin{
             $this->CI->session->sess_create();
 
             //Set session data
-            $data = array();
-            $data['logged_in'] = true;
-            if( isset($row['level']) ) $data['level'] = $row['level'];
-            if( isset($row['bodas_id']) ) $data['bodas_id'] = $row['bodas_id'];
-            if( isset($row['users_id']) ) $data['users_id'] = $row['users_id'];
-            $data['username'] = $row['username'];
-            
-            $this->CI->session->set_userdata($data);
+            $this->CI->session->set_userdata($row);
+
+            //Set logged_in to true
+            $this->CI->session->set_userdata(array('logged_in' => true));
 
             //Login was successful
             return array('status'=>'ok');

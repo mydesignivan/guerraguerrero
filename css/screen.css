@@ -75,7 +75,7 @@ h4 img, h5 img, h6 img {
 /* Text elements
 -------------------------------------------------------------- */
 
-p           { margin: 0 0 1.5em; }
+p           { margin: 0 0 14px; }
 p img.left  { float: left; margin: 1.5em 1.5em 1.5em 0; padding: 0; }
 p img.right { float: right; margin: 1.5em 0 1.5em 1.5em; }
 
@@ -432,8 +432,10 @@ legend      { font-weight: bold; font-size:1.2em; }
 input[type=text], input[type=password],
 input.text, input.title, 
 textarea, select { 
-  background-color:#fff; 
-  border:1px solid #bbb; 
+    background-color: #2F2F2F;
+    border: 1px solid #626061;
+    color:#fff;
+    font-size: 90%;
 }
 /*input[type=text]:focus, input[type=password]:focus,
 input.text:focus, input.title:focus, 
@@ -444,7 +446,7 @@ textarea:focus, select:focus {
 input[type=text], input[type=password],
 input.text, input.title,
 textarea, select {
-  margin:0.5em 0;
+  margin: 0;
 }
 
 input.text, 
@@ -466,7 +468,7 @@ form.inline p { margin-bottom:0; }
 
 .error,
 .notice, 
-.success    { padding: .8em; margin-bottom: 1em; border: 2px solid #ddd; }
+.success    { padding: 2px; margin-bottom: 1em; border: 2px solid #ddd; font-size: 80%; }
 
 .error      { background: #FBE3E4; color: #8a1f11; border-color: #FBC2C4; }
 .notice     { background: #FFF6BF; color: #514721; border-color: #FFD324; }
@@ -519,6 +521,10 @@ form.inline p { margin-bottom:0; }
         width: 378px;
         /*border: 1px solid red;*/
     }
+    ul.menu-panel{
+        width: 200px;
+        /*border: 1px solid red;*/
+    }
         .menu ul li{
             float: left;
             list-style-type: none;
@@ -532,4 +538,73 @@ form.inline p { margin-bottom:0; }
                 padding: 0 15px 0 0;
                 color:#fff;
             }
+            .menu ul li a.current{
+                color:#D6021B;
+            }
 
+/*------------------------------------------------------------------------------
+ - ESTILO PARA TABLAS
+ -----------------------------------------------------------------------------*/
+table{
+    clear: both;
+    background-color: #F7F0E3;
+    width: 100%;
+    color: #B5B5B5 !important;
+    font-size: 110%;
+}
+table thead td{
+    font-weight: bold;
+}
+table td{
+    border: 1px solid #606261;
+}
+    table td.cell1 input[type=checkbox]{
+        margin: 0 !important;
+    }
+table tbody tr.row-even{
+    /*background-color: #F7F0E3;*/
+}
+
+/*------------------------------------------------------------------------------
+ - ESTILO PARA TABLA "CONTENT"
+ -----------------------------------------------------------------------------*/
+.table-contents .cell1{
+    width: 90%;
+}
+.table-contents .cell2{
+    width: 10%;
+    text-align: center;
+}
+
+/*------------------------------------------------------------------------------
+ - ESTILO PARA LABELS
+ -----------------------------------------------------------------------------*/
+label{
+    float: left;
+    text-align: right;
+    margin-right: 5px;
+    font-size: 90%;
+    cursor: pointer;
+}
+
+/*------------------------------------------------------------------------------
+ - ESTILO PARA LOGIN
+ -----------------------------------------------------------------------------*/
+.login{
+    width: 250px;
+    height: auto;
+    padding: 5px 5px 10px 5px;
+    margin: 10px auto !important;
+    border: 1px solid #626061;
+}
+    .login label{
+        width: 90px;
+    }
+
+/*------------------------------------------------------------------------------
+ - ESTILO PARA LINKS
+ -----------------------------------------------------------------------------*/
+a.link-title{
+    color:#626061;
+    font-size: 90%;
+}

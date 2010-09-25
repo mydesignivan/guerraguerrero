@@ -1,6 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 <head>
     <title><?=TITLE_GLOBAL . @$tlp_title;?></title>
@@ -20,30 +20,9 @@
 
 <body>
     <div class="container">
-        <div class="span-24 last header">
-            <?php require('includes/header_inc.php');?>
-        </div>
-        <div class="clear span-24 last main-container"> 
-            <div class="t"></div>
-            <div class="i">
-
-                <?php if( isset($tlp_title_section) ){?>
-                <h1 class="title-section"><?=$tlp_title_section?><img src="images/dibujo-titulo-seccion.png" alt="" width="74" height="57" /></h1>
-                <div class="clear">&nbsp;</div>
-                <?php }?>
-
-                <?php require($tlp_section);?>
-
-            </div>
-            <div class="b"></div>
-            <div class="clear span-24">
-                <div class="flores-left"></div>
-                <div class="flores-right"></div>
-            </div>
-        </div>
-        <div class="clear span-24 last footer"> 
-            <?php require('includes/footer_inc.php');?>
-        </div>
+        <?php require('includes/header_panel_inc.php')?>
+        <?php require($tlp_section)?>
+        <?php require('includes/footer_inc.php')?>
     </div>
 </body>
 </html>

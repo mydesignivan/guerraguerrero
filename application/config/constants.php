@@ -42,7 +42,9 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',	'x+b');
 | NOMBRE DE LAS TABLAS (BASE DE DATO)
 |--------------------------------------------------------------------------
 */
-define('TBL_USERS',              'users');
+define('TBL_USERS',     'users');
+define('TBL_CONTENTS',  'contents');
+define('TBL_MUSIC',     'music');
 
 /*
 |--------------------------------------------------------------------------
@@ -87,6 +89,16 @@ define('UPLOAD_PATH_MP3', './uploads/mp3/');
 */
 define('TITLE_GLOBAL', 'Guerra Guerrero Djs - ');
 define('TITLE_INDEX', 'Home');
+define('TITLE_MUSIC', 'Musica');
+define('TITLE_EVENT_SISTSONIDO', 'Eventos - Sistemas de Sonidos');
+define('TITLE_EVENT_ILUMINACION', 'Eventos - Iluminaci&oacute;n');
+define('TITLE_EVENT_ILUMSONIDO', 'Eventos - Iluminaci&oacute;n - Sonido');
+define('TITLE_DISCOTEQUE', 'Discoteque');
+define('TITLE_RADIOS', 'Radios');
+define('TITLE_SONIDO', 'Sonido');
+define('TITLE_ILUMINACION', 'Iluminaci&oacute;n');
+define('TITLE_PORTFOLIO', 'Portfolio');
+define('TITLE_DESCARGA', 'Descarga tu musica');
 
 /*
 |--------------------------------------------------------------------------
@@ -95,6 +107,16 @@ define('TITLE_INDEX', 'Home');
 */
 define('META_KEYWORDS_GLOBAL', '');
 define('META_KEYWORDS_INDEX', '');
+define('META_KEYWORDS_MUSIC', '');
+define('META_KEYWORDS_EVENT_SISTSONIDO', '');
+define('META_KEYWORDS_EVENT_ILUMINACION', '');
+define('META_KEYWORDS_EVENT_ILUMSONIDO', '');
+define('META_KEYWORDS_DISCOTEQUE', '');
+define('META_KEYWORDS_RADIOS', '');
+define('META_KEYWORDS_SONIDO', '');
+define('META_KEYWORDS_ILUMINACION', '');
+define('META_KEYWORDS_PORTFOLIO', '');
+define('META_KEYWORDS_DESCARGA', '');
 
 
 /*
@@ -104,6 +126,16 @@ define('META_KEYWORDS_INDEX', '');
 */
 define('META_DESCRIPTION_GLOBAL', '');
 define('META_DESCRIPTION_INDEX', '');
+define('META_DESCRIPTION_MUSIC', '');
+define('META_DESCRIPTION_EVENT_SISTSONIDO', '');
+define('META_DESCRIPTION_EVENT_ILUMINACION', '');
+define('META_DESCRIPTION_EVENT_ILUMSONIDO', '');
+define('META_DESCRIPTION_DISCOTEQUE', '');
+define('META_DESCRIPTION_RADIOS', '');
+define('META_DESCRIPTION_SONIDO', '');
+define('META_DESCRIPTION_ILUMINACION', '');
+define('META_DESCRIPTION_PORTFOLIO', '');
+define('META_DESCRIPTION_DESCARGA', '');
 
 /*
 |--------------------------------------------------------------------------
