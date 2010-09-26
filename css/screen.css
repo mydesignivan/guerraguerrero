@@ -435,7 +435,7 @@ textarea, select {
     background-color: #2F2F2F;
     border: 1px solid #626061;
     color:#fff;
-    font-size: 90%;
+    font-size: 100%;
 }
 /*input[type=text]:focus, input[type=password]:focus,
 input.text:focus, input.title:focus, 
@@ -495,10 +495,21 @@ form.inline p { margin-bottom:0; }
         top:8px;
     }
 
+.trow{
+    width: 100%;
+    float: left;
+    clear: both;
+    padding: 5px 0 5px 0;
+}
+
+
+/*-------------------------------------------------------------*/
+/*----------------------------FOOTER-----------------------------*/
+/*-------------------------------------------------------------*/
 .footer{
     float: left;
     text-align: center;
-    font-size: 90%;
+    font-size: 100%;
     border-bottom: 1px solid #999999;
 }
 
@@ -518,11 +529,11 @@ form.inline p { margin-bottom:0; }
     .menu ul{
         margin: 0 auto;
         padding: 0;
-        width: 378px;
+        width: 410px;
         /*border: 1px solid red;*/
     }
     ul.menu-panel{
-        width: 200px;
+        width: 300px;
         /*border: 1px solid red;*/
     }
         .menu ul li{
@@ -534,7 +545,7 @@ form.inline p { margin-bottom:0; }
             .menu ul li a{
                 display:block;
                 text-align: center;
-                font-size: 100%;
+                font-size: 110%;
                 padding: 0 15px 0 0;
                 color:#fff;
             }
@@ -583,8 +594,16 @@ label{
     float: left;
     text-align: right;
     margin-right: 5px;
-    font-size: 90%;
+    font-size: 100%;
     cursor: pointer;
+}
+.form-music label{
+    width:100px;
+}
+
+.label-leyend{
+    width: auto !important;
+    font-size: 90%;
 }
 
 /*------------------------------------------------------------------------------
@@ -606,5 +625,5 @@ label{
  -----------------------------------------------------------------------------*/
 a.link-title{
     color:#626061;
-    font-size: 90%;
+    font-size: 100%;
 }
