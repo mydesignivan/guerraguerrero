@@ -24,7 +24,9 @@
 <body>
     <div class="container">
         <?php require('includes/header_inc.php')?>
+        <div class="content">
         <?php require($tlp_section)?>
+        </div>
         <?php require('includes/footer_inc.php')?>
     </div>
 </body>

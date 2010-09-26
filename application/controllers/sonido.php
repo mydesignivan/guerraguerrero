@@ -21,9 +21,11 @@ class Sonido extends Controller {
     /* PUBLIC FUNCTIONS
      **************************************************************************/
     public function index(){
+        $this->load->model('contents_model');
         $this->_data = $this->dataview->set_data(array(
             'tlp_section'        => 'frontpage/sonido_view.php',
             'tlp_title_section'  => '',
+            'content'            => $this->contents_model->get_content('sonido')
         ));
         $this->load->view('template_frontpage_view', $this->_data);
     }

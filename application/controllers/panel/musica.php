@@ -42,13 +42,14 @@ class Musica extends Controller {
 
     public function create(){
         if( $_SERVER['REQUEST_METHOD']=="POST" ){
-            if( is_uploaded_file($_FILES['txtFileName']) ){
-                if( $this->musica_model->create() ){
-                    $filename = $this->_get_filename($_FILES['txtFileName']);
-                    move_uploaded_file($_FILES['txtFileName']['tmp_name'][$n], UPLOAD_PATH_MP3 . $filename);
+            //print_array($_FILES,true);
+            if( is_uploaded_file($_FILES['txtFileName']['tmp_name']) ){
+                $filename = $this->_get_filename($_FILES['txtFileName']['name']);
+                if( $this->musica_model->create($filename) ){
+                    move_uploaded_file($_FILES['txtFileName']['tmp_name'], UPLOAD_PATH_MP3 . $filename);
                 }else{
                     $this->session->set_flashdata('status', 'error');
-                    $this->session->set_flashdata('message', 'El archivo no ha podido llegar al servidor.');
+                    $this->session->set_flashdata('message', 'Los datos no pudieron ser guardados.');
                     redirect('/panel/musica/form');
                 }
 
@@ -58,6 +59,18 @@ class Musica extends Controller {
                 redirect('/panel/musica/form');
             }
             redirect('/panel/musica/');
+        }
+    }
+
+    public function delete(){
+        if( $this->uri->segment(4) ){
+            $id = $this->uri->segment_array();
+            array_splice($id, 0,3);
+            $res = $this->musica_model->delete($id);
+
+            $this->session->set_flashdata('status', $res ? "success" : "error");
+
+            redirect('/panel/musica /');
         }
     }
 

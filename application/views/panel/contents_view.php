@@ -19,7 +19,7 @@ foreach( $listPages as $row ) {
 
                     <p class="prepend-top">
                         <button type="button" class="left" onclick="Contents.save(this, '<?=$row['reference']?>', 'txtCont<?=$n?>');">Guardar</button>
-                        <img src="img/ajax-loader.gif" alt="Loading" width="16" height="16" class="jq-ajaxloader " />
+                        <img src="img/ajax-loader.gif" alt="Loading" width="16" height="16" class="jq-ajaxloader hide" />
                     </p>
                 </div>
             </td>

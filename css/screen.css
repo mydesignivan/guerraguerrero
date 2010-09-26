@@ -494,12 +494,22 @@ form.inline p { margin-bottom:0; }
         position: relative;
         top:8px;
     }
+    .row1 a, .row1 a:link{
+        color:#B5B5B5;
+    }
 
 .trow{
     width: 100%;
     float: left;
     clear: both;
     padding: 5px 0 5px 0;
+}
+
+.content{
+    clear: both;
+    width: 100%;
+    font-size: 100% !important;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
 
@@ -560,7 +570,7 @@ table{
     clear: both;
     background-color: #F7F0E3;
     width: 100%;
-    color: #B5B5B5 !important;
+    color: #000 !important;
     font-size: 110%;
 }
 table thead td{
@@ -583,6 +593,21 @@ table tbody tr.row-even{
     width: 90%;
 }
 .table-contents .cell2{
+    width: 10%;
+    text-align: center;
+}
+
+/*------------------------------------------------------------------------------
+ - ESTILO PARA TABLA "ADMIN MUSICA"
+ -----------------------------------------------------------------------------*/
+.table-music .cell1{
+    width: 5%;
+    text-align: center;
+}
+.table-music .cell2{
+    width: 75%;
+}
+.table-music .cell3, .table-music .cell4{
     width: 10%;
     text-align: center;
 }
@@ -627,3 +652,10 @@ a.link-title{
     color:#626061;
     font-size: 100%;
 }
+a.link{
+    color:#000;
+    font-size: 100%;
+}
+    a.link:hover{
+        text-decoration: underline;
+    }
