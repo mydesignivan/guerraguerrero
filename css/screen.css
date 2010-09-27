@@ -670,11 +670,67 @@ a.link{
  - ESTILO PARA CATEGORIAS MENU MUSICA
  -----------------------------------------------------------------------------*/
 .music_menu {
+    float: left;
+    clear: left;
     background:url(../img/menu-bg.jpg) top left repeat-x;
-    padding:10px;
-    /*width:100%;*/
+    padding:10px 0 10px 0;
+    width:100%;
+}
+    .music_menu a{
+        text-decoration: none;
+        float: left;
+        color:#fff;
+        margin-left: 10px;
+    }
+    .music_menu .arrow{
+        float:right;
+        margin-right: 10px;
+    }
+
+/*-------------------------------------------------------------*/
+/*----------------------- LISTADO MP3 -------------------------*/
+/*-------------------------------------------------------------*/
+.list-mp3 li, .list-mp3  ul{
+    margin: 0 !important;
+    padding: 0 !important;
+    float: left;
+    width: 100%;
+}
+.list-mp3 li{
+    clear: left;
+    list-style-type: none;
+    text-align: left;
+    /*border: 1px solid red;*/
+}
+.list-mp3 a{
     color:#fff;
+    text-decoration: none;
 }
-.arrow{
-    float:right;
+.list-mp3 .cell1{
+    float: left;
+    width: 8%;
 }
+.list-mp3 .cell2{
+    float: left;
+    width: 92%;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #787878;
+}
+
+/*-------------------------------------------------------------*/
+/*----------------------- PORTFOLIO -------------------------*/
+/*-------------------------------------------------------------*/
+.portfolio-bg{
+   clear: left;
+   width:100%;
+   background: url(../img/background-mails.jpg) repeat-x;
+   height: 96px;
+}
+    .portfolio-bg table td{
+        border: none !important;
+    }
+    .portfolio-bg table{
+        width: 100% !important;
+        background: transparent !important;
+        color:#fff !important;
+    }

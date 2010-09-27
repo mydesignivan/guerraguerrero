@@ -5,8 +5,8 @@
 $src = UPLOAD_PATH_MP3 . $row['filename'];
 ?>
     <li>
-        <a href="<?=$src?>"><img src="img/download.png" alt="" width="22" height="21" /></a>
-        <span><a href="<?=$src?>"><?=$row['name']?></a></span>
+        <div class="cell1"><a href="<?=$src?>"><img src="img/download.png" alt="" width="22" height="21" /></a></div>
+        <div class="cell2"><a href="<?=$src?>"><?=$row['name']?></a></div>
     </li>
 <?php }?>
 </ul>

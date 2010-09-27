@@ -3,6 +3,6 @@
 <?=@$content?>
 <br />
 <br />
-<div class="music_menu"><a href="/musicaeventilum">Eventos</a><div class="arrow"><img src="../../img/arrow-menu.png" alt="" /></div></div>
-<div class="music_menu"><a href="/musicadiscoteque">Discoteque</a><div class="arrow"><img src="../../img/arrow-menu.png" alt="" /></div></div>
-<div class="music_menu"><a href="/musicaradio">Radios</a><div class="arrow"><img src="../../img/arrow-menu.png" alt="" /></div></div>
+<div class="music_menu"><a href="<?=site_url('/musicaeventilum/')?>">Eventos</a><img src="img/arrow-menu.png" alt="" width="11" height="18" class="arrow" /></div>
+<div class="music_menu"><a href="<?=site_url('/musicadiscoteque/')?>">Discoteque</a><img src="img/arrow-menu.png" alt="" width="11" height="18" class="arrow" /></div>
+<div class="music_menu"><a href="<?=site_url('/musicaradio/')?>">Radios</a><img src="img/arrow-menu.png" alt="" width="11" height="18" class="arrow" /></div>
