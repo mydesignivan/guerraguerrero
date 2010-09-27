@@ -47,7 +47,7 @@ a img { border: none; }
    The font-size percentage is of 16px. (0.75 * 16px = 12px) */
 html { font-size:100.01%; }
 body { 
-  font-size: 100%;
+  font-size: 200%;
   color: #fff;
   background: #000;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -492,7 +492,7 @@ form.inline p { margin-bottom:0; }
 }
     .row1 img{
         position: relative;
-        top:8px;
+        top:3px;
     }
     .row1 a, .row1 a:link{
         color:#B5B5B5;
@@ -527,19 +527,18 @@ form.inline p { margin-bottom:0; }
 /*----------------------------MENU-----------------------------*/
 /*-------------------------------------------------------------*/
 .menu{
-    float: left;
+    /*float: left;*/
     background-color: #2F2F2F;
     border-top: 1px solid #626061;
     border-bottom: 1px solid #626061;
     padding: 4px 0 4px 0;
-    text-align: left;
     margin-top: -6px;
     text-align: center;
 }
     .menu ul{
         margin: 0 auto;
         padding: 0;
-        width: 410px;
+        width: 700px;
         /*border: 1px solid red;*/
     }
     ul.menu-panel{
@@ -555,7 +554,7 @@ form.inline p { margin-bottom:0; }
             .menu ul li a{
                 display:block;
                 text-align: center;
-                font-size: 110%;
+                /*font-size: 200%;*/
                 padding: 0 15px 0 0;
                 color:#fff;
             }

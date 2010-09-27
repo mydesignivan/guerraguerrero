@@ -2,7 +2,7 @@
 
 <div class="span-100 row1 last">
     <img src="img/icon-download-qr.png" alt="" width="26" height="26" />
-    <a href="<?//=site_url('//')?>">Descargar Aplicaci&oacute;n QR</a>
+    <a href="http://www.i-nigma.mobi/" target="_blank" >Descargar Aplicaci&oacute;n QR</a>
 </div>
 <div class="clear span-100 row1 last">
     <img src="img/icon-download-music.png" alt="" width="26" height="26" />
