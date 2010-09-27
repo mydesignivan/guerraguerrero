@@ -7,4 +7,5 @@
     <img src="img/footer-800.jpg" alt="" width="100%" />
     <?php }?>
     <p>info@guerraguerrero.com<br />Tel: 154542850 / 155048282 / 145*4588</p>
+    <p class="copyright"><br />2010 (&copy;) Copyright webdesigns Ear Pro.<br />All right reserved. Read legacy policy and privacy policy</p>
 </div>

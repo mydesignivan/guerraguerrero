@@ -520,7 +520,10 @@ form.inline p { margin-bottom:0; }
     float: left;
     text-align: center;
     font-size: 100%;
-    border-bottom: 1px solid #999999;
+}
+.copyright{
+    border-top: 1px solid;
+    font-size: 60%;
 }
 
 /*-------------------------------------------------------------*/
