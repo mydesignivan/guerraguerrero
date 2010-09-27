@@ -22,10 +22,12 @@ class Descargatumusica extends Controller {
      **************************************************************************/
     public function index(){
         $this->load->model('contents_model');
+        $this->load->model('musica_model');
         $this->_data = $this->dataview->set_data(array(
             'tlp_section'        => 'frontpage/descargatumusica_view.php',
             'tlp_title_section'  => '',
-            'content'            => $this->contents_model->get_content('descargar-tu-musica')
+            'content'            => $this->contents_model->get_content('descargar-tu-musica'),
+            'list'               => $this->musica_model->get_list()
         ));
         $this->load->view('template_frontpage_view', $this->_data);
     }

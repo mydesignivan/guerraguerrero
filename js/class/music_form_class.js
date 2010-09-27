@@ -1,7 +1,13 @@
 $(document).ready(function(){
     $('#form1').submit(function(){
+        if( !$('#txtName').val() ){
+            alert("Por favor, debe ingresar el campo nombre.");
+            $('#txtName').focus();
+            return false;
+        }
         if( !$('#txtFileName').val() ){
             alert("Por favor, debe ingresar la ruta del mp3.");
+            $('#txtFileName').focus();
             return false;
         }
 

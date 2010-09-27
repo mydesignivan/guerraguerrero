@@ -11,20 +11,12 @@ class Musica_model extends Model {
      **************************************************************************/
     public function create($filename){
         $data = array(
+            'name    '   => trim($_POST['txtName']),
             'filename'   => $filename,
             'order'      => $this->_get_num_order(TBL_MUSIC),
             'date_added' => date('Y-m-d H:i:s')
         );
         return $this->db->insert(TBL_MUSIC, $data);
-    }
-
-    public function edit(){
-        $data = array(
-            'content'       => $_POST['content'],
-            'last_modified' => date('Y-m-d H:i:s')
-        );
-        $this->db->where('reference', $_POST['reference']);
-        return $this->db->update(TBL_CONTENTS, $data);
     }
 
     public function delete($id){
@@ -41,6 +33,26 @@ class Musica_model extends Model {
     public function get_list($where_in=array()){
         $this->db->order_by('order', 'asc');
         return $this->db->get_where(TBL_MUSIC);
+    }
+
+    /* PUBLIC FUNCTIONS (LLAMADAS POR AJAX)
+     **************************************************************************/
+    public function order(){
+        $initorder = $_POST['initorder'];
+        $rows = json_decode($_POST['rows']);
+
+        $res = $this->db->query('SELECT `order` FROM '.TBL_MUSIC.' WHERE id='.$initorder)->row_array();
+        $order = $res['order'];
+
+        //print_array($rows, true);
+        foreach( $rows as $row ){
+            $id = substr($row, 2);
+            $this->db->where('id', $id);
+            if( !$this->db->update(TBL_MUSIC, array('order' => $order)) ) return false;
+            $order++;
+        }
+
+        return true;
     }
 
     /* PRIVATE FUNCTIONS

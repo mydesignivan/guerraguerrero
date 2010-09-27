@@ -8,7 +8,11 @@
 
 <form id="form1" class="form-music" action="<?=site_url('/panel/musica/create/')?>" method="post" enctype="multipart/form-data">
     <div class="trow">
-        <label for="txtFileName">Mp3</label>
+        <label for="txtName">Nombre</label>
+        <input type="text" name="txtName" id="txtName" size="22" />
+    </div>
+    <div class="trow">
+        <label for="txtFileName">Archivo Mp3</label>
         <input type="file" name="txtFileName" id="txtFileName" size="22" />
     </div>
     <div class="trow">

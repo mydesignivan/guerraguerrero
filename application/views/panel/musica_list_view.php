@@ -40,7 +40,7 @@ foreach( $list->result_array() as $row ) {
 ?>
         <tr id="id<?=$row['id']?>" class="<?=$class?>">
             <td class="cell1"><input type="checkbox" value="<?=$row['id']?>" /></td>
-            <td class="cell2"><span class="jq-name"><?=$row['filename']?></span></td>
+            <td class="cell2"><span class="jq-name"><?=$row['name']?></span></td>
             <td class="cell3"><a href="javascript:void(0)" class="handle link"><img src="img/icon_arrow_move.png" alt="" width="16" alt="16" /></a></td>
             <td class="cell4"><a href="javascript:void(Music.del(<?=$row['id']?>))" class="link">Eliminar</a></td>
         </tr>
