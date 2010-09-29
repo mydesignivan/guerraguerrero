@@ -734,3 +734,28 @@ a.link{
         background: transparent !important;
         color:#fff !important;
     }
+
+/*-------------------------------------------------------------*/
+/*---------------------------- LIST MP3 -----------------------------*/
+/*-------------------------------------------------------------*/
+.list-mp3{
+    position: relative;
+    width:300px;
+    height: 250px;
+    overflow: auto;
+    border:2px solid #666;
+    padding: 5px;
+}
+    .list-mp3 ul,.list-mp3 li{
+        margin: 0;
+        padding: 0;
+        width:278px;
+    }
+    .list-mp3 li{
+        margin-bottom: 2px;
+        /*border:1px solid red;*/
+    }
+    .list-mp3 input{
+        width: 100%;
+    }
+

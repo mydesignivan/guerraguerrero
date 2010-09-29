@@ -155,7 +155,7 @@ function get_data(arr){
 
     arr.each(function(i){
         id.push(this.value);
-        names.push($(this).parent().parent().find('.jq-name').text());
+        names.push($(this).parent().parent().find('.link-title').text());
     });
 
     return {

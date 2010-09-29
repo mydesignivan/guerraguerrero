@@ -13,6 +13,7 @@
 
 <div class="trow">
     <div class="right">
+        <button type="button" onclick="location.href='<?=site_url('panel/musica/form_import')?>'">Importar</button>&nbsp;&nbsp;
         <button type="button" onclick="location.href='<?=site_url('panel/musica/form')?>'">Agregar Mp3</button>&nbsp;&nbsp;
         <?php if( $list->num_rows>0 ){?>
         <button type="button" onclick="Music.del_sel();">Eliminar Seleccionados</button>
@@ -37,10 +38,11 @@ $n=0;
 foreach( $list->result_array() as $row ) {
     $n++;
     $class = $n%2 ? 'row-even' : '';
+    $src = site_url('/panel/musica/form/'.$row['id']);
 ?>
         <tr id="id<?=$row['id']?>" class="<?=$class?>">
             <td class="cell1"><input type="checkbox" value="<?=$row['id']?>" /></td>
-            <td class="cell2"><span class="jq-name"><?=$row['name']?></span></td>
+            <td class="cell2"><a href="<?=$src?>" class="link-title"><?=$row['name']?></a></td>
             <td class="cell3"><a href="javascript:void(0)" class="handle link"><img src="img/icon_arrow_move.png" alt="" width="16" alt="16" /></a></td>
             <td class="cell4"><a href="javascript:void(Music.del(<?=$row['id']?>))" class="link">Eliminar</a></td>
         </tr>

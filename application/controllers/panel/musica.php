@@ -14,11 +14,13 @@ class Musica extends Controller {
             'tlp_title_section'  => ""
         ));
         $this->_data = $this->dataview->get_data();
+        $this->_filename='';
     }
 
     /* PRIVATE PROPERTIES
      **************************************************************************/
     private $_data;
+    private $_filename;
 
     /* PUBLIC FUNCTIONS
      **************************************************************************/
@@ -32,30 +34,54 @@ class Musica extends Controller {
     }
 
     public function form(){
+        $id = $this->uri->segment(4);
+        $data = array(            
+            'tlp_section' => 'panel/musica_form_view.php',
+            'tlp_script'  => array('class_music_form')
+        );
+        if( is_numeric($id) ){
+            $data['info'] = $this->musica_model->get_info($id);
+        }
+        $this->_data = $this->dataview->set_data($data);
+        $this->load->view('template_paneladmin_view', $this->_data);
+    }
+
+    public function form_import(){
         $this->_data = $this->dataview->set_data(array(
-            'tlp_section'        => 'panel/musica_form_view.php',
-            'tlp_script'         => array('class_music_form'),
+            'tlp_section' => 'panel/musica_importar_view.php',
+            'tlp_script'  => array('class_music_import'),
+            'list'        => $this->musica_model->get_list_import()
         ));
         $this->load->view('template_paneladmin_view', $this->_data);
-
     }
 
     public function create(){
         if( $_SERVER['REQUEST_METHOD']=="POST" ){
             //print_array($_FILES,true);
-            if( is_uploaded_file($_FILES['txtFileName']['tmp_name']) ){
-                $filename = $this->_get_filename($_FILES['txtFileName']['name']);
-                if( $this->musica_model->create($filename) ){
-                    move_uploaded_file($_FILES['txtFileName']['tmp_name'], UPLOAD_PATH_MP3 . $filename);
-                }else{
+            if( $this->_uploadmp3() ){
+                if( !$this->musica_model->create($this->_filename) ){
                     $this->session->set_flashdata('status', 'error');
                     $this->session->set_flashdata('message', 'Los datos no pudieron ser guardados.');
+                    @unlink(UPLOAD_PATH_MP3 . $this->_filename);
                     redirect('/panel/musica/form');
                 }
+            }
+            redirect('/panel/musica/');
+        }
+    }
 
-            }else{
+    public function edit(){
+        if( $_SERVER['REQUEST_METHOD']=="POST" ){
+            //print_array($_FILES,true);
+
+            if( !empty($_FILES['txtFileName']['tmp_name']) ){
+                $this->_uploadmp3();
+            }
+
+            if( !$this->musica_model->edit($this->_filename) ){
                 $this->session->set_flashdata('status', 'error');
-                $this->session->set_flashdata('message', 'El archivo no ha podido llegar al servidor.');
+                $this->session->set_flashdata('message', 'Los datos no pudieron ser guardados.');
+                @unlink(UPLOAD_PATH_MP3 . $this->_filename);
                 redirect('/panel/musica/form');
             }
             redirect('/panel/musica/');
@@ -74,6 +100,20 @@ class Musica extends Controller {
         }
     }
 
+    public function import(){
+        if( !$this->musica_model->import() ){
+            $this->session->set_flashdata('status', 'error');
+            $this->session->set_flashdata('message', 'Los datos no pudieron ser guardados.');
+
+            foreach( $this->musica_model->filescopy as $filename ){
+                @unlink(UPLOAD_PATH_MP3 . $filename);
+            }
+
+            redirect('/panel/musica/form_import');
+        }
+        redirect('/panel/musica/');
+    }
+
 
     /* AJAX FUNCTIONS
      **************************************************************************/
@@ -83,40 +123,16 @@ class Musica extends Controller {
 
     /* PRIVATE FUNCTIONS
      **************************************************************************/
-    private function _get_filename($text){
-        $separator = "_";
-
-        $isUTF8 = (mb_detect_encoding($text." ",'UTF-8,ISO-8859-1') == 'UTF-8');
-
-        $text = ($isUTF8) ? utf8_decode($text) : $text;
-        $text = trim($text);
-
-        $_a = utf8_decode("ÁÀãâàá");
-        $_e = utf8_decode("ÉÈéè");
-        $_i = utf8_decode("ÍÌíì");
-        $_o = utf8_decode("ÓÒóò");
-        $_u = utf8_decode("ÚÙúù");
-        $_n = utf8_decode("Ññ");
-        $_c = utf8_decode("Çç");
-        $_b = utf8_decode("ß");
-        $_dash = "\,_ ";
-
-        $text = preg_replace("/[$_a]/", "a", $text );
-        $text = preg_replace("/[$_e]/", "e", $text );
-        $text = preg_replace("/[$_i]/", "i", $text );
-        $text = preg_replace("/[$_o]/", "o", $text );
-        $text = preg_replace("/[$_u]/", "u", $text );
-        $text = preg_replace("/[$_n]/", "n", $text );
-        $text = preg_replace("/[$_c]/", "c", $text );
-        $text = preg_replace("/[$_b]/", "ss", $text );
-
-        $text = preg_replace("/[$_dash]/", $separator, $text );
-        $text = preg_replace("/[^a-zA-Z0-9\-]!=./", "", $text );
-
-        $text = strtolower($text);
-
-        $text = ($isUTF8) ? utf8_encode($text) : $text;
-
-        return uniqid(time()) ."__". $text;
+    private function _uploadmp3(){
+        if( is_uploaded_file($_FILES['txtFileName']['tmp_name']) ){
+            $this->_filename = normalize_filename($_FILES['txtFileName']['name']);
+            move_uploaded_file($_FILES['txtFileName']['tmp_name'], UPLOAD_PATH_MP3 . $this->_filename);
+            return true;
+        }else{
+            $this->session->set_flashdata('status', 'error');
+            $this->session->set_flashdata('message', 'El archivo no ha podido llegar al servidor.');
+            redirect('/panel/musica/form');
+        }
+        return false;
     }
 }

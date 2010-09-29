@@ -80,6 +80,7 @@ define('UPLOAD_FILETYPE', 'gif|jpg|png');
 define('UPLOAD_MAXSIZE', 2048); //Expresado en Kylobytes
 
 define('UPLOAD_PATH_MP3', './uploads/mp3/');
+define('UPLOAD_PATH_MP3IMPORT', './mp3/');
 
 
 /*
