@@ -545,7 +545,7 @@ form.inline p { margin-bottom:0; }
     .menu ul{
         margin: 0 auto;
         padding: 0;
-        width: 700px;
+        width: 100%;/*700px;*/
         /*border: 1px solid red;*/
     }
     ul.menu-panel{
@@ -673,7 +673,8 @@ a.link{
     float: left;
     clear: left;
     background:url(../img/menu-bg.jpg) top left repeat-x;
-    padding:10px 0 10px 0;
+    padding:9px 10px 9px 0;
+    margin-left: -10px;
     width:100%;
 }
     .music_menu a{
@@ -684,7 +685,7 @@ a.link{
     }
     .music_menu .arrow{
         float:right;
-        margin-right: 10px;
+        margin: 10px 10px 0 0;
     }
 
 /*-------------------------------------------------------------*/

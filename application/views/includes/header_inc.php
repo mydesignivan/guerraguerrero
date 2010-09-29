@@ -8,7 +8,15 @@
     <img src="img/icon-download-music.png" alt="" width="26" height="26" />
     <a href="<?=site_url('/descargatumusica/')?>">Descarga tu M&uacute;sica</a>
 </div>
-<div class="clear span-100 last"><a href="http://m.guerraguerrero.com.ar"><img src="img/home-800.jpg" alt="" width="100%" border="0" /></a></div>
+<div class="clear span-100 last">
+    <a href="http://m.guerraguerrero.com.ar">
+    <?php if( $this->uri->segment(1)=="" || $this->uri->segment(1)=="index" ){?>
+    <img src="img/home-800.jpg" alt="" width="100%" border="0" />
+    <?php }else{?>
+    <img src="img/secciones-800.jpg" alt="" width="100%" border="0" />
+    <?php }?>
+
+    </a></div>
 <div class="clear span-100 menu last">
 <?php $page=$this->uri->segment(1)?>
     <ul>
