@@ -47,7 +47,7 @@ a img { border: none; }
    The font-size percentage is of 16px. (0.75 * 16px = 12px) */
 html { font-size:100.01%; }
 body { 
-  font-size: 200%;
+  font-size: 70%;/*200%*/
   color: #fff;
   background: #000;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -103,7 +103,7 @@ pre,code,tt { font: 1em 'andale mono', 'lucida console', monospace; line-height:
 
 li ul, 
 li ol       { margin:0 1.5em; }
-ul, ol      { margin: 0 1.5em 1.5em 1.5em; }
+ul, ol      { margin: 0 1.5em 1.5em 0em;/*1.5*/ }
 
 ul          { list-style-type: disc; }
 ol          { list-style-type: decimal; }
@@ -485,7 +485,7 @@ form.inline p { margin-bottom:0; }
 .right{float:right !important;}
 .align-center{text-align: center !important;}
 .row1{
-    padding: 0 4px 6px 4px;
+    padding: 0 4px 2px 4px;
     background-color: #282A29;
     border-bottom: 1px solid #606261;
     color:#B5B5B5;
@@ -539,13 +539,14 @@ form.inline p { margin-bottom:0; }
     border-top: 1px solid #626061;
     border-bottom: 1px solid #626061;
     padding: 4px 0 4px 0;
-    margin-top: -13px;
+    margin-top: -10px;/*-13px*/
     text-align: center;
+    width: 100%;
 }
     .menu ul{
         margin: 0 auto;
-        padding: 0;
-        width: 700px;
+        padding: 0 0 0 2px;
+        width: 100%;/*700px;*/
         /*border: 1px solid red;*/
     }
     ul.menu-panel{
@@ -556,13 +557,15 @@ form.inline p { margin-bottom:0; }
             float: left;
             list-style-type: none;
             display: inline;
+            text-align: center;
+            /*font-size: 80%;*/
             /*border: 1px solid red;*/
         }
             .menu ul li a{
                 display:block;
                 text-align: center;
                 /*font-size: 200%;*/
-                padding: 0 15px 0 0;
+                padding: 0 5px 0 0;
                 color:#fff;
             }
             .menu ul li a.current{
@@ -673,7 +676,8 @@ a.link{
     float: left;
     clear: left;
     background:url(../img/menu-bg.jpg) top left repeat-x;
-    padding:10px 0 10px 0;
+    padding:9px 10px 9px 0;
+    margin-left: -10px;
     width:100%;
 }
     .music_menu a{
@@ -684,7 +688,7 @@ a.link{
     }
     .music_menu .arrow{
         float:right;
-        margin-right: 10px;
+        margin: 10px 10px 0 0;
     }
 
 /*-------------------------------------------------------------*/
@@ -708,12 +712,15 @@ a.link{
 }
 .list-mp3 .cell1{
     float: left;
-    width: 8%;
+    margin-top:3px;
+    /*width: 8%;*/
 }
 .list-mp3 .cell2{
     float: left;
-    width: 92%;
-    padding-bottom: 2px;
+    /*width: 92%;*/
+    padding-bottom: 0px;
+    margin-left: 5px;
+    margin-top: 2px;
     border-bottom: 1px solid #787878;
 }
 
