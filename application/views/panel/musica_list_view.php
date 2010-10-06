@@ -27,7 +27,7 @@
     <thead>
         <tr>
             <td class="cell1">&nbsp;</td>
-            <td class="cell2">Mp3</td>
+            <td class="cell2">T&iacute;tulo</td>
             <td class="cell3">Ordernar</td>
             <td class="cell4">Eliminar</td>
         </tr>

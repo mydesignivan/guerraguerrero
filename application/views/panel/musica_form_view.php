@@ -8,7 +8,7 @@
 
 <form id="form1" class="form-music" action="<?=site_url(isset($info) ? '/panel/musica/edit/' : '/panel/musica/create/')?>" method="post" enctype="multipart/form-data">
     <div class="trow">
-        <label for="txtName">Nombre</label>
+        <label for="txtName">T&iacute;tulo Mp3</label>
         <input type="text" name="txtName" id="txtName" size="22" value="<?=@$info['name']?>" />
     </div>
     <div class="trow">

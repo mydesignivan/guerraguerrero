@@ -22,6 +22,8 @@ class Index extends Controller {
     /* PUBLIC FUNCTIONS
      **************************************************************************/
     public function index(){
+        //die($this->encpss->encode('O8mV2g10'));
+
         if( $this->session->userdata('logged_in') ) {
             redirect('/panel/contents/');
         }else{

@@ -8,7 +8,7 @@
 
 <form id="form1" class="form-music" action="<?=site_url('/panel/musica/import')?>" method="post" enctype="application/x-www-form-urlencoded">
     <div class="trow">
-        <div class="list-mp3">
+        <div class="list-mp3-import">
             <ul>
             <?php foreach( $list as $filename ){?>
                 <li><input type="text" name="txtName[]" value="<?=substr($filename, 0, -4)?>" /><input type="hidden" name="ext[]" value="<?=substr($filename, -4)?>" /></li>

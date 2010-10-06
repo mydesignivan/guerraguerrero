@@ -732,9 +732,6 @@ a.link{
    width:100%;
    background: url(../img/background-mails.jpg) repeat-x;
    height: 96px;
-   margin-left: -10px;
-   padding-top: 15px;
-   margin-top: -7px;
 }
     .portfolio-bg table td{
         border: none !important;
@@ -746,9 +743,9 @@ a.link{
     }
 
 /*-------------------------------------------------------------*/
-/*------------------- LIST MP3 (PANEL) ------------------------*/
+/*---------------------------- LIST MP3 -----------------------------*/
 /*-------------------------------------------------------------*/
-.list-mp3-import{
+.list2-mp3{
     position: relative;
     width:300px;
     height: 250px;
@@ -756,15 +753,16 @@ a.link{
     border:2px solid #666;
     padding: 5px;
 }
-    .list-mp3-import ul,.list-mp3-import li{
+    .list2-mp3 ul,.list2-mp3 li{
         margin: 0;
         padding: 0;
         width:278px;
     }
-    .list-mp3-import li{
+    .list2-mp3 li{
         margin-bottom: 2px;
         /*border:1px solid red;*/
     }
-    .list-mp3-import input{
+    .list2-mp3 input{
         width: 100%;
     }
+
